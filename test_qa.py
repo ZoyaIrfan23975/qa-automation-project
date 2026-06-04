@@ -16,5 +16,5 @@ def test_password_length():
 def test_api_status_code():
   expected_status = 200
   actual_status = 200
-  assert actual_status = expected_status
+  assert actual_status == expected_status
   

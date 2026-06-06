@@ -1,9 +1,12 @@
 # QA Automation Tests - Zoya Irfan
 # Pytest test cases demonstrating automated testing
 
-# Test 1 - Basic validation check
-def test_basic_check(): 
-  assert 1 + 1 == 2
+import requets
+
+# Test 1 - Real API status code check
+def test_real_api_returns_200():
+  response = request.get("https://jsonplaceholder.typicode.com/posts/1")
+  assert response.status_code == 200
 
 # Test 2 - Password length validation
 # Simulates checking that a password meets minimum length requirements

@@ -8,11 +8,12 @@ def test_real_api_returns_200():
   response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
   assert response.status_code == 200
 
-# Test 2 - Password length validation
-# Simulates checking that a password meets minimum length requirements
-def test_password_length(): 
-  password = "securepass123"
-  assert len(password) >= 8
+# Test 2 - Check JSON response contains correct data
+def test_api_response_contains_correct_data():
+    response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
+    data = response.json()
+    assert data["id"] == 1
+    assert "title" in data
 
 # Test 3 - API status code validation
 # Simulates checking that an API returns the expected status code

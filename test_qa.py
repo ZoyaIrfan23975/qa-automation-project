@@ -27,3 +27,11 @@ def test_invalid_login_rejected():
     assert login("", "password123") == False
     assert login("zoya", "short") == False
     assert login("zoya", "validpass123") == True
+
+# Test 4 - Data format validation
+def test_api_returns_list_of_posts():
+    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    data = response.json()
+    assert isinstance(data, list)
+    assert len(data) > 0
+    assert "title" in data[0]

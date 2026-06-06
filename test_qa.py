@@ -5,7 +5,7 @@ import requests
 
 # Test 1 - Real API status code check
 def test_real_api_returns_200():
-  response = request.get("https://jsonplaceholder.typicode.com/posts/1")
+  response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
   assert response.status_code == 200
 
 # Test 2 - Password length validation

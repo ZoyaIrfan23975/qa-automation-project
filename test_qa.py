@@ -15,10 +15,15 @@ def test_api_response_contains_correct_data():
     assert data["id"] == 1
     assert "title" in data
 
-# Test 3 - API status code validation
-# Simulates checking that an API returns the expected status code
-def test_api_status_code():
-  expected_status = 200
-  actual_status = 200
-  assert actual_status == expected_status
-  
+# Test 3 - Login validation
+def test_invalid_login_rejected():
+    def login(username, password):
+        if username == "" or password == "":
+            return False
+        if len(password) < 8:
+            return False
+        return True
+
+    assert login("", "password123") == False
+    assert login("zoya", "short") == False
+    assert login("zoya", "validpass123") == True

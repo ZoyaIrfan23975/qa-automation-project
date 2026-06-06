@@ -1,7 +1,7 @@
 # QA Automation Tests - Zoya Irfan
 # Pytest test cases demonstrating automated testing
 
-import requets
+import requests
 
 # Test 1 - Real API status code check
 def test_real_api_returns_200():
